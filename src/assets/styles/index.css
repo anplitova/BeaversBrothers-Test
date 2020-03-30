@@ -1,3 +1,4 @@
+@import "./_fonts.css";
 @import "./_variables.css";
 @import "./_normalize.css";
 
@@ -7,20 +8,18 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
 body {
   min-width: 320px;
-  min-height: 100%;
-  background: #fff;
-  color: #000;
-  font-size: 16px;
+  max-width: 768px;
+  width: 100%;
+  background-color: #ffffff;
+  font-family: var(--default-font);
+  font-size: 12px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   line-height: 22px;
+  color: #000000;
 }
 
 h1,
@@ -37,7 +36,6 @@ p {
 }
 
 a {
-  color: currentColor;
   outline: none;
   text-decoration: none;
 }
@@ -59,17 +57,6 @@ img:not([class]),
 svg:not([class]) {
   display: block;
   max-width: 100%;
-}
-
-:global {
-  .undefined {
-    background: red !important;
-    color: red !important;
-  }
-
-  .root {
-    /* overflow: hidden; */
-  }
 }
 
 ul,
