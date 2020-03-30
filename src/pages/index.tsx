@@ -103,8 +103,45 @@ const news = [
 
 export default class extends Component {
   render() {
+    var placeList = places.map((item) =>
+      <li className="place__item">
+        <article className="place-detail">
+          <div className="place-detail__image">
+              <img src={item.image} alt={item.title}/>
+          </div>
+          <h3 className="place-detail__title">{item.title}</h3>
+          <p className="place-detail__text">{item.text}</p>
+        </article>
+      </li>
+    );
+
+    var newList = news.map((item) =>
+      <li className="new__item">
+        <article className="new-detail">
+          <div className="new-detail__image">
+              <img src={item.image} alt={item.title}/>
+          </div>
+          <h3 className="new-detail__title">{item.title}</h3>
+          <p className="new-detail__text">{item.text}</p>
+        </article>
+      </li>
+    );
+
     return (
-      <Layout></Layout>
+      <Layout>
+        <section className="section">
+          <h2 className="section__title"><b>Топ</b> <i>10</i> мест</h2>
+          <div className="place">
+            <ul className="place__list">{placeList}</ul>
+          </div>
+        </section>
+        <section className="section">
+          <h2 className="section__title"><i>Скоро</i> на сайте</h2>
+          <div className="new">
+            <ul className="new__list">{newList}</ul>
+          </div>
+        </section>
+      </Layout>
     )
   }
 }
