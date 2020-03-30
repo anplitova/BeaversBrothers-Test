@@ -1,0 +1,15 @@
+.list {
+    display: flex;
+    margin-left: 20px;
+    overflow-x: auto;
+}
+
+.item {
+    flex-shrink: 0;
+    width: 275px;
+    margin-right:20px;
+}
+
+.item:last-child {
+    margin-right: 0;
+}

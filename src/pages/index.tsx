@@ -101,22 +101,43 @@ const news = [
   }
 ];
 
+import section from  "./section.module.css"
+import place from  "./place.module.css"
+import place_main from  "./place-main.module.css"
+import slider from  "./slider.module.css"
+
 export default class extends Component {
   render() {
-    var placeList = places.map((item) =>
-      <li className="place__item">
+    var mainPlaceList = places.slice(0, 2).map((item) =>
+      <li className={place.item}>
+        <article className={place_main.article}>
+          <div className={place_main.image}>
+              <img src={item.image} alt={item.title}/>
+          </div>
+          <div className={place_main.content}>
+            <p className={place_main.text}>
+              <h3 className={place_main.title}>{item.title}</h3> {item.text}
+            </p>
+          </div>
+        </article>
+      </li>
+    );
+
+    var placeList = places.slice(2).map((item) =>
+      <li className={slider.item}>
         <article className="place-detail">
           <div className="place-detail__image">
               <img src={item.image} alt={item.title}/>
           </div>
-          <h3 className="place-detail__title">{item.title}</h3>
-          <p className="place-detail__text">{item.text}</p>
+          <p className="place-detail__text">
+            <h3 className="place-detail__title">{item.title}</h3> {item.text}
+          </p>
         </article>
       </li>
     );
 
     var newList = news.map((item) =>
-      <li className="new__item">
+      <li className={slider.item}>
         <article className="new-detail">
           <div className="new-detail__image">
               <img src={item.image} alt={item.title}/>
@@ -129,16 +150,17 @@ export default class extends Component {
 
     return (
       <Layout>
-        <section className="section">
-          <h2 className="section__title"><b>Топ</b> <i>10</i> мест</h2>
-          <div className="place">
-            <ul className="place__list">{placeList}</ul>
+        <section className={section.section}>
+          <h2 className={section.title}><b>Топ</b> <i>10</i> мест</h2>
+          <div className={place.place}>
+            <ul className={place.list}>{mainPlaceList}</ul>
+            <ul className={slider.list}>{placeList}</ul>
           </div>
         </section>
-        <section className="section">
-          <h2 className="section__title"><i>Скоро</i> на сайте</h2>
+        <section className={section.section}>
+          <h2 className={section.title}><i>Скоро</i> на сайте</h2>
           <div className="new">
-            <ul className="new__list">{newList}</ul>
+            <ul className={slider.list}>{newList}</ul>
           </div>
         </section>
       </Layout>
