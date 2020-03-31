@@ -165,14 +165,14 @@ export default class extends Component {
 
     return (
       <Layout>
-        <section className={section.section}>
+        <section className={section.place}>
           <h2 className={section.title}><b>Топ</b> <i>10</i> мест</h2>
           <div className={place.place}>
             <ul className={place.list}>{mainPlaceList}</ul>
             <ul className={`${slider.list} ${slider.counter}`}>{placeList}</ul>
           </div>
         </section>
-        <section className={section.section}>
+        <section className={section.blog}>
           <h2 className={section.title}><i>Скоро</i> на сайте</h2>
           <div className={blog.blog}>
             <ul className={slider.list}>{newList}</ul>

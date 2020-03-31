@@ -6,6 +6,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  margin-bottom: 17px;
 }
 
 .type_1 .image {
@@ -14,47 +15,49 @@
 }
 
 .type_1 .image:before {
-  top: 0;
-  left: 0;
-  width: 206px;
-  height: 31px;
-  background-image: url("../assets/icons/decor-yellow.svg");
+  top: 48px;
+  left: 12px;
+  width: 249px;
+  height: 36px;
+  background-image: url("../assets/icons/decor-yellow-big.svg");
 }
 
 .type_2 .image {
-  padding: 32px 0;
+  padding: 17px 0;
   background-color: #F8AA9E;
 }
 
 .type_2 .image:before {
-  top: 0;
+  top: 48px;
   left: 0;
   z-index: 1;
-  width: 96px;
-  height: 19px;
-  background-image: url("../assets/icons/decor-pink_1.svg");
+  width: 116px;
+  height: 24px;
+  background-image: url("../assets/icons/decor-pink-big-left.svg");
 }
 
 .type_2 .image:after {
-  top: 0;
+  top: 118px;
   right: 0;
   z-index: 3;
-  width: 101px;
-  height: 27px;
-  background-image: url("../assets/icons/decor-pink_2.svg");
+  width: 116px;
+  height: 24px;
+  background-image: url("../assets/icons/decor-pink-big-right.svg");
 }
 
 .type_3 .image {
-  padding: 36px 0;
+  padding: 23px 0;
   background-color: #008066;
 }
 
 .type_3 .image:before {
-  top: 0;
-  left: 0;
-  width: 198px;
+  top: 96px;
+  left: 50%;
+  z-index: 1;
+  width: 238px;
   height: 27px;
-  background-image: linear-gradient(to bottom, #ffffff 9px, transparent 9px,transparent 13px, #ffffff 13px, #ffffff 22px);
+  background-image: linear-gradient(to bottom, #ffffff 11px, transparent 11px,transparent 16px, #ffffff 16px, #ffffff 27px);
+  transform: translateX(-50%);
 }
 
 .type_1 .image:before,
@@ -74,23 +77,25 @@
 .type_2 .image_type {
   position: relative;
   z-index: 2;
-  width: 142px;
-  height: 142px;
+  width: 172px;
+  height: 172px;
   border-radius: 50%;
   overflow: hidden;
 }
 
 .type_3 .image_type {
-  width: 134px;
-  height: 134px;
+  position: relative;
+  z-index: 2;
+  width: 161px;
+  height: 161px;
   overflow: hidden;
 }
 
 .route:after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 17px;
+  right: -8px;
   width: 40px;
   height: 40px;
   background-image: url("../assets/icons/icon-route.svg");
@@ -99,5 +104,15 @@
 @media (--screen-tablet) {
   .item {
     width: 228px;
+  }
+
+  .type_2 .image_type {
+    width: 142px;
+    height: 142px;
+  }
+
+  .type_3 .image_type {
+    width: 134px;
+    height: 134px;
   }
 }

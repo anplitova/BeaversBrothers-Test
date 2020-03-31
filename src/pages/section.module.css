@@ -1,6 +1,9 @@
-.section {
-  display: flex;
-  flex-direction: column;
+.place {
+  margin-bottom: 68px;
+}
+
+.blog {
+  
 }
 
 .title {

@@ -8,7 +8,8 @@
   position: relative;
   flex-shrink: 0;
   width: 275px;
-  margin-right:20px;
+  margin-right: 20px;
+  padding-top: 25px;
 }
 
 .counter {
@@ -19,13 +20,15 @@
   counter-increment: list;
   content: counter(list);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 81px;
+  left: 50%;
+  z-index: 2;
   font-family: var(--default-font);
   font-weight: 700;
-  font-size: 80px;
+  font-size: 100px;
   line-height: 100px;
   color: #ffffff;
+  transform: translateX(-50%);
 }
 
 @media (--screen-tablet) {
@@ -33,7 +36,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-right: 20px;
+    margin: 0;
+    padding: 0 20px;
   }
 
   .item {
