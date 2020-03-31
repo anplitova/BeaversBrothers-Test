@@ -22,13 +22,15 @@ const places = [
     id: 'place_1',
     image: place_1,
     title: 'Невьянская башня',
-    text: 'Остатки прошлого величия промышленников Демидовых'
+    text: 'Остатки прошлого величия промышленников Демидовых',
+    type: 'type_1'
   },
   {
     id: 'place_2',
     image: place_2,
     title: 'Ганина яма',
-    text: 'В 1918 году в шахту бросили останки представителей царской династии Романовых'
+    text: 'В 1918 году в шахту бросили останки представителей царской династии Романовых',
+    type: 'type_2'
   },
   {
     id: 'place_3',
@@ -46,7 +48,8 @@ const places = [
     id: 'place_5',
     image: place_5,
     title: 'Оленьи ручьи',
-    text: 'Красивый парк с памятниками древней истории'
+    text: 'Красивый парк с памятниками древней истории',
+    type: 'children'
   },
   {
     id: 'place_6',
@@ -64,7 +67,8 @@ const places = [
     id: 'place_8',
     image: place_8,
     title: 'Зюраткуль',
-    text: 'Горный хребет и озеро'
+    text: 'Горный хребет и озеро',
+    type: 'basco'
   },
   {
     id: 'place_9',
@@ -85,65 +89,76 @@ const news = [
     id: 'new_1',
     image: new_1,
     title: '10 мест для прогулок',
-    text: 'Парки, тихие улицы, чтобы отправиться на пробежку или плэнер'
+    text: 'Парки, тихие улицы, чтобы отправиться на пробежку или плэнер',
+    route: true,
+    type: 'type_1'
   },
   {
     id: 'new_2',
     image: new_2,
     title: 'Где пробовать настоящую уральскую кухню',
-    text: 'Пельмени, кулебяки шаньги: традиционные рецепты народов Урала'
+    text: 'Пельмени, кулебяки шаньги: традиционные рецепты народов Урала',
+    route: true,
+    type: 'type_2'
   },
   {
     id: 'new_3',
     image: new_3,
     title: 'Портал',
-    text: 'Арт-объект фестиваля Стеннография'
+    text: 'Арт-объект фестиваля Стеннография',
+    type: 'type_3'
   }
 ];
 
 import section from  "./section.module.css"
 import place from  "./place.module.css"
-import place_main from  "./place-main.module.css"
 import slider from  "./slider.module.css"
+import blog from  "./blog.module.css"
 
 export default class extends Component {
   render() {
     var mainPlaceList = places.slice(0, 2).map((item) =>
       <li className={place.item}>
-        <article className={place_main.article}>
-          <div className={place_main.image}>
+        <article className={`${item.type ? place[item.type] : ''}`}>
+          <div className={place.image}>
+            <div className={place.image_type}>
               <img src={item.image} alt={item.title}/>
+            </div>
           </div>
-          <div className={place_main.content}>
-            <p className={place_main.text}>
-              <h3 className={place_main.title}>{item.title}</h3> {item.text}
-            </p>
-          </div>
+          <p className={place.text}>
+            <h3 className={place.title}>{item.title}</h3> {item.text}
+          </p>
         </article>
       </li>
     );
 
     var placeList = places.slice(2).map((item) =>
       <li className={slider.item}>
-        <article className="place-detail">
-          <div className="place-detail__image">
+        <article className={`${item.type ? place[item.type] : ''}`}>
+          {item.type &&
+            <div className={place.decor}></div>
+          }
+          <div className={place.image}>
               <img src={item.image} alt={item.title}/>
           </div>
-          <p className="place-detail__text">
-            <h3 className="place-detail__title">{item.title}</h3> {item.text}
+          <p className={place.text}>
+            <h3 className={place.title}>{item.title}</h3> {item.text}
           </p>
         </article>
       </li>
     );
 
     var newList = news.map((item) =>
-      <li className={slider.item}>
-        <article className="new-detail">
-          <div className="new-detail__image">
+      <li className={`${slider.item} ${blog.item}`}>
+        <article className={`${blog[item.type]} ${item.route === true ? ' ' + blog.route : ''}`}>
+          <div className={blog.image}>
+            <div className={blog.image_type}>
               <img src={item.image} alt={item.title}/>
+            </div>
           </div>
-          <h3 className="new-detail__title">{item.title}</h3>
-          <p className="new-detail__text">{item.text}</p>
+          <p className={place.text}>
+            <h3 className={`${place.title} ${place.title_black}`}>{item.title}</h3> {item.text}
+          </p>
         </article>
       </li>
     );
@@ -154,12 +169,12 @@ export default class extends Component {
           <h2 className={section.title}><b>Топ</b> <i>10</i> мест</h2>
           <div className={place.place}>
             <ul className={place.list}>{mainPlaceList}</ul>
-            <ul className={slider.list}>{placeList}</ul>
+            <ul className={`${slider.list} ${slider.counter}`}>{placeList}</ul>
           </div>
         </section>
         <section className={section.section}>
           <h2 className={section.title}><i>Скоро</i> на сайте</h2>
-          <div className="new">
+          <div className={blog.blog}>
             <ul className={slider.list}>{newList}</ul>
           </div>
         </section>

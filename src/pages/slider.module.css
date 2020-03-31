@@ -1,15 +1,43 @@
 .list {
-    display: flex;
-    margin-left: 20px;
-    overflow-x: auto;
+  display: flex;
+  margin-left: 20px;
+  overflow-x: auto;
 }
 
 .item {
-    flex-shrink: 0;
-    width: 275px;
-    margin-right:20px;
+  position: relative;
+  flex-shrink: 0;
+  width: 275px;
+  margin-right:20px;
 }
 
-.item:last-child {
+.counter {
+  counter-reset: list+2;
+}
+
+.counter .item:before {
+  counter-increment: list;
+  content: counter(list);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--default-font);
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 100px;
+  color: #ffffff;
+}
+
+@media (--screen-tablet) {
+  .list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 20px;
+  }
+
+  .item {
+    width: 166px;
     margin-right: 0;
+  }
 }

@@ -1,0 +1,103 @@
+.blog {
+  margin-top: 40px;
+}
+
+.image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.type_1 .image {
+  padding: 20px 0;
+  background: #82CA9C;
+}
+
+.type_1 .image:before {
+  top: 0;
+  left: 0;
+  width: 206px;
+  height: 31px;
+  background-image: url("../assets/icons/decor-yellow.svg");
+}
+
+.type_2 .image {
+  padding: 32px 0;
+  background-color: #F8AA9E;
+}
+
+.type_2 .image:before {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 96px;
+  height: 19px;
+  background-image: url("../assets/icons/decor-pink_1.svg");
+}
+
+.type_2 .image:after {
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 101px;
+  height: 27px;
+  background-image: url("../assets/icons/decor-pink_2.svg");
+}
+
+.type_3 .image {
+  padding: 36px 0;
+  background-color: #008066;
+}
+
+.type_3 .image:before {
+  top: 0;
+  left: 0;
+  width: 198px;
+  height: 27px;
+  background-image: linear-gradient(to bottom, #ffffff 9px, transparent 9px,transparent 13px, #ffffff 13px, #ffffff 22px);
+}
+
+.type_1 .image:before,
+.type_2 .image:before,
+.type_2 .image:after,
+.type_3 .image:before {
+  content: "";
+  position: absolute;
+}
+
+.type_1 .image_type {
+  width: 194px;
+  height: 166px;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.type_2 .image_type {
+  position: relative;
+  z-index: 2;
+  width: 142px;
+  height: 142px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.type_3 .image_type {
+  width: 134px;
+  height: 134px;
+  overflow: hidden;
+}
+
+.route:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-image: url("../assets/icons/icon-route.svg");
+}
+
+@media (--screen-tablet) {
+  .item {
+    width: 228px;
+  }
+}

@@ -1,5 +1,6 @@
-@custom-media --screen--mobile screen and (min-width: 320px);
-@custom-media --screen--tablet screen and (min-width: 767px);
+@custom-media --screen-mobile screen and (min-width: 320px);
+@custom-media --screen-tablet screen and (min-width: 520px);
+@custom-media --screen-desktop screen and (min-width: 768px);
 
 :root {
   --default-font: "Open Sans", sans-serif;
