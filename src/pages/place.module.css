@@ -1,7 +1,7 @@
 .list {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px 20px 15px;
+  margin: 0 20px 13px;
 }
 
 .item {
@@ -14,11 +14,11 @@
   margin-bottom: 0;
 }
 
-.place .list {
+.list {
   counter-reset: list;
 }
 
-.place .item:before {
+.item:before {
   counter-increment: list;
   content: counter(list);
   position: absolute;
@@ -30,82 +30,18 @@
   color: #000000;
 }
 
-.place .item:nth-child(1):before {
+.item:nth-child(1):before {
   top: 20px;
   left: 43px;
 }
 
-.place .item:nth-child(2):before {
-  top: -5px;
+.item:nth-child(2):before {
+  top: -6px;
   left: 36px;
 }
 
 .image {
   margin-bottom: 16px;
-}
-
-.title {
-  display: inline;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 22px;
-  color: var(--color-green);
-}
-
-.title_black {
-  color: #000000;
-}
-
-.text {
-  font-size: 18px;
-  line-height: 22px;
-  color: var(--color-gray);
-}
-
-.basco .decor:before,
-.basco:after,
-.children .decor:before,
-.children:after {
-  content: "";
-  position: absolute;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.children:after {
-  top: 1px;
-  right: -8px;
-  width: 40px;
-  height: 47px;
-  background-image: url("../assets/icons/icon-children.svg");
-}
-
-.basco:after {
-  top: 2px;
-  right: -8px;
-  width: 46px;
-  height: 40px;
-  background-image: url("../assets/icons/icon-basco.svg");
-}
-
-.children .decor:before {
-  top: 108px;
-  left: 50%;
-  z-index: 1;
-  width: 190px;
-  height: 39px;
-  background-image: url("../assets/icons/decor-orange-big.svg");
-  transform: translateX(-50%);
-}
-
-.basco .decor:before {
-  top: 133px;
-  left: 50%;
-  z-index: 1;
-  width: 138px;
-  height: 39px;
-  background-image: linear-gradient(to bottom, #82CA9C 16px, transparent 16px,transparent 23px, #82CA9C 23px, #82CA9C 39px);
-  transform: translateX(-50%);
 }
 
 .type_1 .image_type {
@@ -133,15 +69,130 @@
   overflow: hidden;
 }
 
+.title {
+  display: inline;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  color: var(--color-green);
+}
+
+.text {
+  font-size: 18px;
+  line-height: 22px;
+  color: var(--color-gray);
+}
+
+.basco .decor:before,
+.basco:after,
+.children .decor:before,
+.children:after {
+  content: "";
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.children:after {
+  top: 1px;
+  right: 12px;
+  width: 40px;
+  height: 47px;
+  background-image: url("../assets/icons/icon-children.svg");
+}
+
+.basco:after {
+  top: 2px;
+  right: 12px;
+  width: 46px;
+  height: 40px;
+  background-image: url("../assets/icons/icon-basco.svg");
+}
+
+.children .decor:before {
+  top: 108px;
+  left: 50%;
+  z-index: 1;
+  width: 190px;
+  height: 39px;
+  background-image: url("../assets/icons/decor-orange-big.svg");
+  transform: translateX(-50%);
+}
+
+.basco .decor:before {
+  top: 133px;
+  left: 50%;
+  z-index: 1;
+  width: 138px;
+  height: 39px;
+  background-image: linear-gradient(to bottom, #82CA9C 16px, transparent 16px,transparent 23px, #82CA9C 23px, #82CA9C 39px);
+  transform: translateX(-50%);
+}
+
 @media (--screen-tablet) {
   .list {
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 27px;
-    margin-bottom: 29px;
+    margin-bottom: 16px;
   }
 
   .item {
+    display: flex;
+    justify-content: center;
     width: calc(50% - 10px);
+    margin-bottom: 0;
+  }
+
+  .item:before {
+    font-size: 80px;
+  }
+
+  .item:nth-child(1):before {
+    top: -2px;
+  }
+  
+  .item:nth-child(2):before {
+    top: -1px;
+    left: 4px;
+  }
+
+  .type_1 {
+    max-width: 264px;
+  }
+
+  .type_1 .image:before {
+    top: 44px;
+  }
+
+  .type_2 {
+    max-width: 352px;
+  }
+
+  .image_small {
+    margin-bottom: 8px;
+  }
+
+  .children .decor:before {
+    top: 66px;
+    width: 130px;
+    height: 31px;
+    background-image: url("../assets/icons/decor-orange-small.svg");
+  }
+
+  .children:after {
+    top: 4px;
+    right: -6px;
+  }
+
+  .basco .decor:before {
+    top: 85px;
+    width: 88px;
+    height: 35px;
+    background-image: linear-gradient(to bottom, #82CA9C 14px, transparent 14px,transparent 21px, #82CA9C 21px, #82CA9C 35px);
+  }
+
+  .basco:after {
+    top: 5px;
+    right: -8px;
   }
 }

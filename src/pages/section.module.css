@@ -2,10 +2,6 @@
   margin-bottom: 68px;
 }
 
-.blog {
-  
-}
-
 .title {
   padding: 0 20px;
   font-size: 32px;
@@ -19,5 +15,27 @@
   i {
     font-family: var(--decorative-font);
     font-weight: 400;
+  }
+}
+
+.title_place {
+  margin-bottom: 11px;
+}
+
+.title_blog {
+  margin-bottom: 16px;
+}
+
+@media (--screen-tablet) {
+  .place {
+    margin-bottom: 26px;
+  }
+
+  .title_place {
+    margin-bottom: 29px;
+  }
+
+  .title_blog {
+    margin-bottom: 28px;
   }
 }
